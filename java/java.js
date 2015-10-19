@@ -21,10 +21,12 @@ $(document).ready(function() {
 			this.name = name;
 			this.price = price;
 			this.quant = quant;
+			this.total = price;
 		},
 		name: "",
 		price: 0,
 		quant: 0,
+		total: 0,
 	});
 
 	var cart = {
@@ -32,15 +34,17 @@ $(document).ready(function() {
 		totalPrice: 0,
 		drawProducts: function() {
 
+			// Drop the while table
 			$('#cartcontent tbody').remove();
 
+			// Insert all the information to the tale
 			for(var i = 0; i < cart.products.length; i++){
 				var row = $("<tr/>");
 				$("#cartcontent").append(row);
 				row.append($("<td>" + cart.products[i].id + "</td>"));
 				row.append($("<td>" + cart.products[i].name + "</td>"));
 				row.append($("<td>" + cart.products[i].quant + "</td>"));
-				row.append($("<td>" + cart.products[i].price + "</td>"));
+				row.append($("<td>" + cart.products[i].total + "</td>"));
 			}
 		},
 		addProduct: function(id, name, price) {
@@ -51,6 +55,7 @@ $(document).ready(function() {
 			for(var i = 0; i < cart.products.length; i++){
 				if(cart.products[i].id === id) {
 					cart.products[i].quant++;
+					cart.products[i].total += cart.products[i].price;
 					cart.drawProducts();
 					return;
 				}
@@ -58,7 +63,7 @@ $(document).ready(function() {
 			cart.products.push( new product(id, name, price, 1) );
 			cart.drawProducts();
 		},
-		deleteProduct: function(){
+		deleteProducts: function(){
 			console.log("In DeleteProducts");
 		}
 	}
