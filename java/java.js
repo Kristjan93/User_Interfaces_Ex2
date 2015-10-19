@@ -34,6 +34,10 @@ $(document).ready(function() {
 				row.append($("<td>" + cart.products[i].total + "</td>"));
 			}
 		},
+		updateTotalPrice: function(price){
+			cart.totalPrice += price;
+			$('div.cart .total').html('Total: $'+ cart.totalPrice);
+		},
 		justUpdate: function(id){
 			for(var i = 0; i < cart.products.length; i++){
 				if(cart.products[i].id === id) {
@@ -46,9 +50,9 @@ $(document).ready(function() {
 			return false;
 		},
 		addProduct: function(id, name, price) {
+
 			// Update total price and display it
-			cart.totalPrice += price;
-			$('div.cart .total').html('Total: $'+ cart.totalPrice);
+			cart.updateTotalPrice(price);
 
 			// If product is already existent we just update
 			if(cart.justUpdate(id) === true){
@@ -59,17 +63,23 @@ $(document).ready(function() {
 			cart.drawProducts();
 		},
 		deleteProducts: function(){
-			$('#cartcontent tbody').remove();
 			cart.products = [];
+			cart.totalPrice = 0;
+			cart.updateTotalPrice(0);
+			cart.drawProducts();
 		}
 	}
-	
+
 	$( ".product" ).on( "click", function() {
 		// Here we extract information from HTML (never done in practice)
 		var id = $(this).find('p:eq(0)').text();
 		var name = $(this).find('p:eq(1)').text();
 		var price = $(this).find('p:eq(2)').text();
 		cart.addProduct(parseFloat(id.split(':')[1]), name, parseFloat(price.split('$')[1]));
+	});
+
+	$( "#deleteCart").click(function(){
+		cart.deleteProducts();
 	});
 
 });
