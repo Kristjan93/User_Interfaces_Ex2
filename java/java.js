@@ -1,18 +1,5 @@
 // Pseudo code
 
-
-
-/*
- * Class - Books
- * Include fix for creating now objects in JavaScript
- * Create 6 Items with the property's:
- *	-Name
- *	-Id(might be good)
- *	-Price
- */
-
-/* Control of events in the page */
-
 $(document).ready(function() {
 
 	var product = Base.extend({
@@ -47,35 +34,41 @@ $(document).ready(function() {
 				row.append($("<td>" + cart.products[i].total + "</td>"));
 			}
 		},
-		addProduct: function(id, name, price) {
-			// Update total price and display it
-			cart.totalPrice += price;
-			$('div.cart .total').html('Total: $'+ cart.totalPrice);
-
+		justUpdate: function(id){
 			for(var i = 0; i < cart.products.length; i++){
 				if(cart.products[i].id === id) {
 					cart.products[i].quant++;
 					cart.products[i].total += cart.products[i].price;
 					cart.drawProducts();
-					return;
+					return true;
 				}
 			}
+			return false;
+		},
+		addProduct: function(id, name, price) {
+			// Update total price and display it
+			cart.totalPrice += price;
+			$('div.cart .total').html('Total: $'+ cart.totalPrice);
+
+			// If product is already existent we just update
+			if(cart.justUpdate(id) === true){
+				return;
+			}
+			// If this is a new product add it to the list
 			cart.products.push( new product(id, name, price, 1) );
 			cart.drawProducts();
 		},
 		deleteProducts: function(){
-			console.log("In DeleteProducts");
+			$('#cartcontent tbody').remove();
+			cart.products = [];
 		}
 	}
 	
 	$( ".product" ).on( "click", function() {
+		// Here we extract information from HTML (never done in practice)
 		var id = $(this).find('p:eq(0)').text();
 		var name = $(this).find('p:eq(1)').text();
 		var price = $(this).find('p:eq(2)').text();
-
-		console.log(name);
-		console.log(price);
-
 		cart.addProduct(parseFloat(id.split(':')[1]), name, parseFloat(price.split('$')[1]));
 	});
 
