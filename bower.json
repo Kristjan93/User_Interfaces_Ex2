@@ -1,0 +1,18 @@
+{
+  "name": "Ex1",
+  "version": "0.0.0",
+  "authors": [
+    "Kristján Patrekur <krillinn@gmail.com>"
+  ],
+  "keywords": [
+    "Batman"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

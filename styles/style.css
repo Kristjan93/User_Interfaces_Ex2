@@ -1,0 +1,200 @@
+/* It is possible to use Id, child and more selectors 
+ * and it is important to know them and i do know them
+ * i do not use much here for they are redundant and useless (Hilmar ekki ?)
+ */
+
+body, html {
+	margin:0;
+	padding:0;
+	color:#000;
+}
+
+/* Declare font-size so 1em is 10px,
+ * possible to use JavaScript to re-render page and make it responsive using this method
+ */
+body {
+	font-size: 10px;
+	font-family: "Courier New", Courier, monospace;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+[class*="col-"] {
+	float: left;
+	/*padding: 15px;*/
+	/*border: 1px solid red;*/
+}
+
+.empty {
+	height: 0.1em;
+}
+
+.row:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+	width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+	/* For tablets: */
+	.col-m-1 {width: 0%;}
+	.col-m-1 {width: 8.33%;}
+	.col-m-2 {width: 16.66%;}
+	.col-m-3 {width: 25%;}
+	.col-m-4 {width: 33.33%;}
+	.col-m-5 {width: 41.66%;}
+	.col-m-6 {width: 50%;}
+	.col-m-7 {width: 58.33%;}
+	.col-m-8 {width: 66.66%;}
+	.col-m-9 {width: 75%;}
+	.col-m-10 {width: 83.33%;}
+	.col-m-11 {width: 91.66%;}
+	.col-m-12 {width: 100%;}
+	.wrapper-m {
+		margin: 0em;
+		padding: 0em;
+		border: 0em;
+		width: 98%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	/* For desktop: */
+	.col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+
+	.vertical {
+		font-size: 1.5em;
+		margin-bottom: 5%;
+		height: 2.8em;
+	}
+
+	.wrapper {
+		margin: 0em;
+		padding: 0em;
+		border: 0em;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+}
+
+header {
+	background-color: rgb(223, 81, 66);
+	height: 10em;
+}
+
+.titlePic {
+	height: 10em;
+}
+
+.logo {
+	height: 10em;
+	max-width: 100%;
+}
+
+.titleText {
+	height: 10em;
+}
+
+.titleText h1 {
+	margin-top: 2em;
+	margin-left: 1em;
+}
+
+/*New********************/
+
+.products {
+	list-style: none;
+	padding: 0em;
+	margin: 0em;
+	height:100%;
+
+	background-color: blue;
+}
+
+
+.products li {
+	display: inline;
+	float: left;
+	margin: 1em;
+}
+
+.item {
+	display: block;
+	text-decoration: none;
+}
+
+.item img {
+	border: 0.1em solid #333;
+}
+
+.item p {
+	margin: 0;
+	font-weight: bold;
+	text-align: center;
+	color: #c3c3c3;
+}
+
+
+
+/* TODO fix this ugly piece of code */
+.cart {
+	background-color: green;
+}
+
+/*
+h1{
+	text-align:center;
+	color:#555;
+}
+
+h2 {	position:absolute;
+	font-size:16px;
+	left:10px;
+	bottom:20px;
+	color:#555;
+
+}
+
+.total {
+	margin:0;
+	text-align:right;
+	padding-right:20px;
+}*/
+
+/***********************/
+
+.footer {
+	margin-top: 2em;
+	height: 3em;
+	border-top: 0.2em solid rgb(223, 81, 66);
+}
+
+.footer p {
+	padding-top: 0.5em;
+}
+
+.footer i {
+	font-size: 1.5em;
+}
