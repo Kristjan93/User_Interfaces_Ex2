@@ -16,10 +16,9 @@
 $(document).ready(function() {
 
 	var product = Base.extend({
-		constructor: function(name, price, desc) {
+		constructor: function(name, price) {
 			this.name = name;
 			this.price = price;
-			this.desc = desc;
 		},
 		name: "",
 		price: 0,
@@ -29,7 +28,9 @@ $(document).ready(function() {
 	var cart = {
 		products: [],
 		addProduct: function(name, price) {
-			cart.products.push({name: name, price: price});
+
+			cart.products.push( new product(name, price) );
+
 			console.log(cart.products);
 			console.log("In addProducts");
 		},
@@ -38,9 +39,10 @@ $(document).ready(function() {
 		}
 	}
 	
-	$( ".product" ).on( "click", function(e, source) {
+	$( ".product" ).on( "click", function() {
 		var name = $(this).find('p:eq(0)').text();
 		var price = $(this).find('p:eq(1)').text();
+
 		console.log(name);
 		console.log(price);
 
