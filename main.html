@@ -44,21 +44,29 @@
 							<a href="#" class="product">
 								<img src="./images/shirt1.gif"/>
 								<div>
-									<p>ID:1</p>
 									<p>Balloon</p>
 									<p>Price:$25</p>
 								</div>
 							</a>
+							
+							<form class="addProduct" accept-charset="utf-8">
+								<input type="number" min="1" max="100" step="1" value="1" name="quantity">
+								<button value="0" type="submit">add</button>
+							</form>
+
 						</li>
 						<li>
 							<a href="#" class="product">
 								<img src="./images/shirt1.gif"/>
 								<div>
-									<p>ID:2</p>
 									<p>Pizza</p>
 									<p>Price:$50</p>
 								</div>
 							</a>
+							<form class="addProduct" accept-charset="utf-8">
+								<input type="number" min="1" max="100" step="1" value="1" name="quantity">
+								<button value="1" type="submit">add</button>
+							</form>
 						</li>
 					</ul>
 				</div>
@@ -69,7 +77,6 @@
 					<table id="cartcontent">
 						<thead>
 						<tr>
-							<th>Id</th>
 							<th>Name</th>
 							<th>Quantity</th>
 							<th>Price</th>
