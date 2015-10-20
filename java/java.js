@@ -107,6 +107,12 @@ $(document).ready(function() {
 		cart.deleteProducts();
 	});
 
+	//Change the content on the page when clicking on Home on the navigation bar
+	// $("li").click(function(){
+	// 	console.log("is it working?");
+ //        $("#div1").load("homePage.rtf");
+ //    });
+
 });
 
 
