@@ -96,7 +96,7 @@ $(document).ready(function() {
 
 	$('.addProduct').on('submit', function () {
 		var id = $(this).find('button').val();
-		var quant = $(this).find('input[name="quantity"]').val();
+		var quant = parseInt($(this).find('input[name="quantity"]').val());
 		console.log(id, quant);
 		cart.addProduct(id, quant);
 		return false;
