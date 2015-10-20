@@ -3,10 +3,9 @@
 $(document).ready(function() {
 
 	var product = Base.extend({
-		constructor: function(name, price, quant) {
+		constructor: function(name, price) {
 			this.name = name;
 			this.price = price;
-			this.quant = quant;
 		},
 		name: "",
 		price: 0,
@@ -74,8 +73,8 @@ $(document).ready(function() {
 
 	var inisiateDatabase = function(){
 		/* Here we add make the "database" */
-		cart.products.push( new product("Balloon", 25, 1) );
-		cart.products.push( new product("Pizza", 50, 1) );
+		cart.products.push( new product("Balloon", 25) );
+		cart.products.push( new product("Pizza", 50) );
 	}; inisiateDatabase();
 
 	// $( ".product" ).on( "click", function() {
