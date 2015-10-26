@@ -15,6 +15,7 @@ body, html {
 body {
 	font-size: 10px;
 	font-family: "Courier New", Courier, monospace;
+
 }
 
 * {
@@ -141,6 +142,10 @@ header {
 
 /*New********************/
 
+#div1 {
+	background-color: #FF6633;	
+}
+
 .products {
 	list-style: none;
 	padding: 0em;
@@ -191,16 +196,9 @@ table {
 }
 
 #cartcontent th{
-	padding: 5px;	
+	padding: 0.5em;	
 }
 
-caption {
-  text-align: left;
-  color: silver;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 5px;
-}
 
 thead {
   background: SteelBlue;
