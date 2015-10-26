@@ -69,7 +69,11 @@ $(document).ready(function() {
 	var inisiateDatabase = function(){
 		/* Here we add make the "database" */
 		cart.products.push( new product("Balloon", 25, 1) );
-		cart.products.push( new product("Pizza", 50) );
+		cart.products.push( new product("Green Fever", 50) );
+		cart.products.push( new product("Elephant", 75) );
+		cart.products.push( new product("Nerdie", 45) );
+		cart.products.push( new product("Blue Fever", 50) );
+		cart.products.push( new product("Fuzzy", 100) );
 	}; inisiateDatabase();
 
 	$('.addProduct').on('submit', function () {
@@ -85,7 +89,7 @@ $(document).ready(function() {
 	});
 
 	//Cant make it work because it cant load a local file!!!
-	
+
 	//Change the content on the page when clicking on Home on the navigation bar
 	// $("li").click(function(){
 	// 	console.log("is it working?");

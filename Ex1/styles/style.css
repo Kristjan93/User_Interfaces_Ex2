@@ -150,6 +150,9 @@ header {
 	background-color: #FF6633;
 }
 
+.products p{
+	color: #111111;
+}
 
 .products li {
 	display: inline;
