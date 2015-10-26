@@ -28,6 +28,16 @@ body {
     padding: 0;
 }
 
+/*Color of the text in the navigation bar*/
+#navBar a{
+	color: #111111;
+}
+
+#navBar{
+	color: rgb(255,0,0);
+    background-color: #FF4136;
+}
+
 [class*="col-"] {
 	float: left;
 	/*padding: 15px;*/
@@ -107,7 +117,7 @@ body {
 }
 
 header {
-	background-color: rgb(223, 81, 66);
+	background-color: #FF851B;
 	height: 10em;
 }
 
@@ -167,7 +177,7 @@ header {
 
 /* TODO fix this ugly piece of code */
 .cart {
-	background-color: green;
+	background-color: #FF4136;
 }
 
 /***********************/

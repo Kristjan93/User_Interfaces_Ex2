@@ -84,11 +84,15 @@ $(document).ready(function() {
 		cart.deleteProducts();
 	});
 
+	//Cant make it work because it cant load a local file!!!
+	
 	//Change the content on the page when clicking on Home on the navigation bar
 	// $("li").click(function(){
 	// 	console.log("is it working?");
- //        $("#div1").load("homePage.rtf");
+ //        $("#div1").load('homePage.html');
  //    });
+
+
 
 });
 
