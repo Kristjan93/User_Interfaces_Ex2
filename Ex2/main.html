@@ -1,57 +1,69 @@
 <!DOCTYPE>
 <html>
+
 	<head>
 		<!-- Making css take into account the total width/height of any element -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8"/>
-
 		<title>ShoppingForYou</title>
 		
 		<link rel="stylesheet" type="text/css" href="./styles/style.css">
 		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-
+		<link rel="stylesheet" type="text/css" href="bower_components/jquery.steps/demo/css/jquery.steps.css">
 		<!-- For fixing the bugs with object oriented javaScript -->
 		<script src="bower_components/basejs/js/Base.js" type="text/javascript"></script>
 		<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+		<!-- 2 Framworks for better form validation -->
+		<script src="bower_components/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+		<script src="bower_components/jquery.steps/build/jquery.steps.min.js" type="text/javascript"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="java/java.js" type="text/javascript"></script>
 	</head>
+
 	<body>
-		<div class="col-12">
-			<header class="row">
-				<div class="titlePic col-md-2">
-					<img class="logo"
-					src="./images/Anonymous_logo.png"
-					alt="android phone logo">
-				</div>
-				<div class="col-md-10"><h1>The End!</h1></div>
-			</header>
+		<form id="myForm" action="#">
+			<h3>Shipping address</h3>
+			<fieldset>
+				<legend>Shipping address</legend>
 
-			<main class="col-md-12">
+				<label for="userName-2" class="label-rq">Name</label>
+				<input id="userName-2" name="userName" type="text" class="required">
 
-			<nav class="col-md-2">
-				<ul class="list-group">
-					<li id="homeButton"><a href="#">Home</a></li>
-					<li><a href="#">Store</a></li>
-					<li><a href="#">Q&amp;A</a></li>
-					<li><a href="#">About Us</a></li>
-				</ul>
-			</nav>
-			<div class="col-10">
-				
-			</div>
-			
-			</main>
-			
-			<footer class="footer col-12 col-m-12">
-				<p class="col-3 col-m-3">@ThisISTheEnd</p>
-				<div class="col-7 col-m-7 empty"></div>
-				<p class="col-2 col-m-2">
-					<a href="#"><i class="facebook square icon"></i></a>
-					<a href="#"><i class="tumblr square icon"></i></a>
-					<a href="#"><i class="google plus square icon"></i></a>
-				</p>
-			</footer>
-		</div>
+				<label for="password-2">Password *</label>
+				<input id="password-2" name="password" type="text" class="required">
+
+				<label for="confirm-2">Confirm Password *</label>
+				<input id="confirm-2" name="confirm" type="text" class="required">
+
+				<p>(*) Mandatory</p>
+			</fieldset>
+			<h3>Profile</h3>
+			<fieldset>
+				<legend>Profile Information</legend>
+				<label for="name-2">First name *</label>
+				<input id="name-2" name="name" type="text" class="required">
+				<label for="surname-2">Last name *</label>
+				<input id="surname-2" name="surname" type="text" class="required">
+				<label for="email-2">Email *</label>
+				<input id="email-2" name="email" type="text" class="required email">
+				<label for="address-2">Address</label>
+				<input id="address-2" name="address" type="text">
+				<label for="age-2">Age (The warning step will show up if age is less than 18) *</label>
+				<input id="age-2" name="age" type="text" class="required number">
+				<p>(*) Mandatory</p>
+			</fieldset>
+			<h3>Warning</h3>
+			<fieldset>
+				<legend>You are to young</legend>
+				<p>Please go away ;-)</p>
+			</fieldset>
+			<h3>Finish</h3>
+			<fieldset>
+				<legend>Terms and Conditions</legend>
+				<input id="acceptTerms-2" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms-2">I agree with the Terms and Conditions.</label>
+			</fieldset>
+		</form>
 	</body>
+	<script>
+	</script>
 </html>

@@ -1,74 +1,9 @@
-/* It is possible to use Id, child and more selectors 
- * and it is important to know them and i do know them
- * i do not use much here for they are redundant and useless (Hilmar ekki ?)
- */
-
-body, html {
-	margin:0;
-	padding:0;
-	color:#000;
+/* required */
+.label-rq {
+	color: blue;
 }
 
-/* Declare font-size so 1em is 10px,
- * possible to use JavaScript to re-render page and make it responsive using this method
- */
-body {
-	font-size: 10px;
-	font-family: "Courier New", Courier, monospace;
-}
-
-
-.row:after {
-	content: "";
-	clear: both;
-	display: block;
-}
-
-.wrapper {
-		margin: 0em;
-		padding: 0em;
-		border: 0em;
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-header {
-	background-color: rgb(223, 81, 66);
-	height: 10em;
-}
-
-/*.titlePic {
-	height: 10em;
-}*/
-
-.logo {
-	height: 10em;
-	max-width: 100%;
-}
-
-/*.titleText {
-	height: 10em;
-}*/
-
-/*
-.titleText h1 {
-	margin-top: 2em;
-	margin-left: 1em;
-}*/
-
-/***********************/
-
-.footer {
-	margin-top: 2em;
-	height: 3em;
-	border-top: 0.2em solid rgb(223, 81, 66);
-}
-
-.footer p {
-	padding-top: 0.5em;
-}
-
-.footer i {
-	font-size: 1.5em;
+/* not required */
+.label-nrq {
+	color: orange;
 }

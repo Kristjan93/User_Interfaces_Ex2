@@ -1,94 +1,55 @@
 // Pseudo code
 
 $(document).ready(function() {
+	var form = $("#myForm").show();
 
-	var product = Base.extend({
-		constructor: function(name, price) {
-			this.name = name;
-			this.price = price;
-		},
-		name: "",
-		price: 0,
-		quant: 0,
-		total: 0,
-		display: false
-	});
-
-	var cart = {
-		products: [],
-		totalPrice: 0,
-		drawProducts: function() {
-
-			// Drop the whole table
-			$('#cartcontent tbody').remove();
-
-			// Show the cart information
-			for(var i = 0; i < cart.products.length; i++){
-				if(cart.products[i].display === true) {
-					var row = $("<tr/>");
-					$("#cartcontent").append(row);
-					row.append($("<td>" + cart.products[i].name + "</td>"));
-					row.append($("<td>" + cart.products[i].quant + "</td>"));
-					row.append($("<td>" + cart.products[i].total + "</td>"));
-				}
-			}
-		},
-		updateTotalPrice: function(price){
-			cart.totalPrice += price;
-			$('div.cart .total').html('Total: $'+ cart.totalPrice);
-		},
-		justUpdate: function(id, quant) {
-			if(cart.products[id] !== undefined ) {
-				cart.products[id].total += (cart.products[id].price * quant);
-				cart.updateTotalPrice(cart.products[id].price * quant);
-				cart.products[id].quant += quant;
-				cart.products[id].display = true;
-				// Draw changes
-				cart.drawProducts();
+	form.steps({
+		headerTag: "h3",
+		bodyTag: "fieldset",
+		transitionEffect: "slideLeft",
+		onStepChanging: function(event, currentIndex, newIndex) {
+			// Allways allow previous action even if the current form is not valid!
+			if (currentIndex > newIndex) {
 				return true;
 			}
-			return false;
-		},
-		addProduct: function(id, quant) {
-			// Call the function to update the item status in the cart
-			// If false there is no item
-			if(cart.justUpdate(id, quant) === true) {
-				return;
+			// Forbid next action on "Warning" step if the user is to young
+			if (newIndex === 3 && Number($("#age-2").val()) < 18) {
+				return false;
 			}
-			// TODO ERROR
+			// Needed in some cases if the user went back (clean up)
+			if (currentIndex < newIndex) {
+				// To remove error styles
+				form.find(".body:eq(" + newIndex + ") label.error").remove();
+				form.find(".body:eq(" + newIndex + ") .error").removeClass("error");
+			}
+			form.validate().settings.ignore = ":disabled,:hidden";
+			return form.valid();
 		},
-		deleteProducts: function(){
-			cart.products = [];
-			cart.totalPrice = 0;
-			cart.updateTotalPrice(0);
-			cart.drawProducts();
-			inisiateDatabase();
+		onStepChanged: function(event, currentIndex, priorIndex) {
+			// Used to skip the "Warning" step if the user is old enough.
+			if (currentIndex === 2 && Number($("#age-2").val()) >= 18) {
+				form.steps("next");
+			}
+			// Used to skip the "Warning" step if the user is old enough and wants to the previous step.
+			if (currentIndex === 2 && priorIndex === 3) {
+				form.steps("previous");
+			}
+		},
+		onFinishing: function(event, currentIndex) {
+			form.validate().settings.ignore = ":disabled";
+			return form.valid();
+		},
+		onFinished: function(event, currentIndex) {
+			alert("Submitted!");
 		}
-	}
-
-	var inisiateDatabase = function(){
-		/* Here we add make the "database" */
-		cart.products.push( new product("Balloon", 25, 1) );
-		cart.products.push( new product("Pizza", 50) );
-	}; inisiateDatabase();
-
-	$('.addProduct').on('submit', function () {
-		var id = $(this).find('button').val();
-		var quant = parseInt($(this).find('input[name="quantity"]').val());
-		cart.addProduct(id, quant);
-		return false;
+	}).validate({
+		errorPlacement: function errorPlacement(error, element) {
+			element.before(error);
+		},
+		rules: {
+			confirm: {
+				equalTo: "#password-2"
+			}
+		}
 	});
-
-
-	$( "#deleteCart").click(function(){
-		cart.deleteProducts();
-	});
-
-	//Change the content on the page when clicking on Home on the navigation bar
-	// $("li").click(function(){
-	// 	console.log("is it working?");
- //        $("#div1").load("homePage.rtf");
- //    });
-
 });
-
