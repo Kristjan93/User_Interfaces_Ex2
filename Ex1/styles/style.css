@@ -185,6 +185,55 @@ header {
 
 /***********************/
 
+/*Table style BEGIN*/
+table {
+  font-family: "Helvetica Neue", Helvetica, sans-serif
+}
+
+#cartcontent th{
+	padding: 5px;	
+}
+
+caption {
+  text-align: left;
+  color: silver;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+thead {
+  background: SteelBlue;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background: #FF0000;
+}
+
+tbody tr td:nth-child(2) {
+  text-align:center;
+}
+
+tbody tr td:nth-child(3),
+tbody tr td:nth-child(4) {
+  text-align: right;
+  font-family: monospace;
+}
+
+tfoot tr th:last-child {
+  font-family: monospace;
+}
+
+#deleteCart {
+	background-color: #505050;
+}
+
+.total {
+	font-size: 2em;
+}
+/*Table style ENDS*/
+
 .footer {
 	margin-top: 2em;
 	height: 3em;
