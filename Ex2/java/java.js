@@ -47,9 +47,54 @@ $(document).ready(function() {
 			element.before(error);
 		},
 		rules: {
+			email: {
+				email: true
+			},
+			telephone: {
+				digits: true,
+				rangelength: [3, 30]
+			},
+			userName: {
+				required: {
+					depends: function() {
+						return $('#userName-2').val() != '';
+					} 
+				}
+			},
+			// TODO fix how pwcheck messes everything up 
+			password: {
+				required: false,
+				pwcheck: {
+					depends: function() {
+						return $('#userName-2').val() != '';
+					}
+				},
+				maxlength: 8
+			},
 			confirm: {
 				equalTo: "#password-2"
+			},
+		},
+		messages: {
+			password: {
+				pwcheck: ""
 			}
 		}
 	});
+	// Specific password requirements
+	$.validator.addMethod("pwcheck", function(value) {
+		return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
+		&& /[a-z]/.test(value) // has a lowercase letter
+		&& /\d/.test(value) // has a digit
+	});
+
 });
+
+
+				// required: function() {
+				// 	console.log($("#userName-2").val());
+				// 	return $("#userName-2").val() == "";
+				// }
+
+
+// "Must contain letters [a-z] and digits[0-9]"
