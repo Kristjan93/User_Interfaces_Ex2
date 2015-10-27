@@ -1,7 +1,9 @@
 // Pseudo code
 
 $(document).ready(function() {
+
 	var form = $("#myForm").show();
+	var email = "";
 
 	form.steps({
 		headerTag: "h3",
@@ -14,6 +16,10 @@ $(document).ready(function() {
 			}
 			// Needed in some cases if the user went back (clean up)
 			if (currentIndex < newIndex) {
+				// Here we get the email information to display later
+				if(currentIndex === 0) {
+					email = $("#email-2").val();
+				}
 				// To remove error styles
 				form.find(".body:eq(" + newIndex + ") label.error").remove();
 				form.find(".body:eq(" + newIndex + ") .error").removeClass("error");
@@ -26,7 +32,7 @@ $(document).ready(function() {
 			return form.valid();
 		},
 		onFinished: function(event, currentIndex) {
-			alert("Submitted!");
+			alert("All information concerning your purchase has been sent to " + email + ".");
 		}
 	}).validate({
 		errorPlacement: function errorPlacement(error, element) {
@@ -59,19 +65,47 @@ $(document).ready(function() {
 			},
 			confirm: {
 				equalTo: "#password-2"
+			},
+			holderName: {
+				required: true
+			},
+			typeCard: {
+				required: true
+			},
+			expiryMonth: {
+				valueNotEquals: "month"
+			},
+			expiryYear: {
+				valueNotEquals: "year"
+			},
+			cvv: {
+				required: true
 			}
 		},
 		messages: {
 			password: {
 				pwcheck: "Must contain letters [a-z] and digits[0-9]"
+			},
+			expiryMonth: {
+				valueNotEquals: "Please select an item"
+			},
+			expiryYear: {
+				valueNotEquals: "Please select an item"
 			}
 		}
 	});
+
 	// Specific password requirements
 	$.validator.addMethod("pwcheck", function(value) {
 		return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
-			&& /[a-z]/.test(value) // has a lowercase letter
-			&& /\d/.test(value) // has a digit
+			// has a lowercase letter
+			&& /[a-z]/.test(value)
+			// has a digit
+			&& /\d/.test(value)
+	});
+
+	$.validator.addMethod("valueNotEquals", function(value, element, arg){
+		return arg != value;
 	});
 
 	function readURL(input) {
@@ -87,5 +121,16 @@ $(document).ready(function() {
 	$("#profImg-2").change(function() {
 		readURL(this);
 	});
+
+	$('body').on('click', '.btn-group button', function (e) {
+		var id = this.id;
+
+		if(id === "paypal") {
+			window.location.replace("https://www.paypal.com/es/webapps/mpp/home");
+		}
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
+	});
+
 
 });

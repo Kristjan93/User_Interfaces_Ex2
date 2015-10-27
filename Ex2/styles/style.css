@@ -4,7 +4,7 @@ body{
 
 /* required */
 .label-rq {
-	color: blue;
+	color: yellow;
 }
 
 /* not required */
@@ -17,3 +17,11 @@ body{
 	height: 10em;
 	width: 10em;
 }
+
+.form-group {
+	margin-bottom: 4em;
+}
+
+/*.totalAmo {
+	text-align: center;
+}*/
