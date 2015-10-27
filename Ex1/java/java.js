@@ -98,6 +98,16 @@ $(document).ready(function() {
         $("#myModal_2").modal("show");
     });
 
+	//When Q and A button is pressed.
+    $("#qanda").click(function(event){
+    	$("#div1").html("Dont ask us anything");
+    });
+
+    //When About us is pressed.
+    $("#about").click(function(event){
+    	$("#div1").html("Two quys from Iceland who decided to sell t-shirt on the internet. We are related because everyone from Iceland is. We dont like polar bears because thay some times eat our family.");
+    });
+
 	//Cant make it work because it cant load a local file!!!
 
 	//Change the content on the page when clicking on Home on the navigation bar
