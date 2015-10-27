@@ -227,6 +227,11 @@ tfoot tr th:last-child {
 	background-color: #505050;
 }
 
+/*hide the ID of the products*/
+p.hide {
+	display: none;
+}
+
 .total {
 	font-size: 2em;
 }

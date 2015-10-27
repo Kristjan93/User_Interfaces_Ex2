@@ -3,9 +3,10 @@
 $(document).ready(function() {
 
 	var product = Base.extend({
-		constructor: function(name, price) {
+		constructor: function(name, price, description) {
 			this.name = name;
 			this.price = price;
+			this.description = description;
 		},
 		name: "",
 		price: 0,
@@ -68,12 +69,12 @@ $(document).ready(function() {
 
 	var inisiateDatabase = function(){
 		/* Here we add make the "database" */
-		cart.products.push( new product("Balloon", 25, 1) );
-		cart.products.push( new product("Green Fever", 50) );
-		cart.products.push( new product("Elephant", 75) );
-		cart.products.push( new product("Nerdie", 45) );
-		cart.products.push( new product("Blue Fever", 50) );
-		cart.products.push( new product("Fuzzy", 100) );
+		cart.products.push( new product("Balloon", 25, "This is a beautiful Balloon t-shirt") );
+		cart.products.push( new product("Green Fever", 50, "This is an ugly t-shirt") );
+		cart.products.push( new product("Elephant", 75, "Buy this or something bad will happen") );
+		cart.products.push( new product("Nerdie", 45, "This t-shirt is for nerds") );
+		cart.products.push( new product("Blue Fever", 50, "Dont buy this one, it's cursed") );
+		cart.products.push( new product("Fuzzy", 100, "This one is the coolest one") );
 	}; inisiateDatabase();
 
 	$('.addProduct').on('submit', function () {
@@ -87,6 +88,15 @@ $(document).ready(function() {
 	$( "#deleteCart").click(function(){
 		cart.deleteProducts();
 	});
+
+	//Make a modal that will display a description about the product
+	$(".product").click(function(event) {
+		var id = $(this).find("p:first").text();
+		$("#nameOfProduct").html(cart.products[id].name);
+		$("#description").html(cart.products[id].description);
+        event.preventDefault();
+        $("#myModal_2").modal("show");
+    });
 
 	//Cant make it work because it cant load a local file!!!
 
