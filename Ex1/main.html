@@ -32,10 +32,9 @@
 			<main class="col-12">
 			<nav class="col-2 col-m-12" id="navBar">
 				<ul class="nav nav-pills nav-stacked" class="menuBar col-12 col-m-12">
-					<li  selected class="vertical "><a class="col-12 col-m-3"href="#">Home</a></li>
-					<li class="vertical "><a class="col-12 col-m-3" href="#">Store</a></li>
-					<li class="vertical "><a class="col-12 col-m-3" href="#">Q&amp;A</a></li>
-					<li class="vertical "><a class="col-12 col-m-3" href="#">About Us</a></li>
+					<li class="vertical "><a class="col-12 col-m-3" href="/Users/Hilmar/Documents/UC3M/UserInterface/User_Interfaces_Ex2/Ex1/main.html">Store</a></li>
+					<li id="qanda" class="vertical "><a class="col-12 col-m-3" href="#">Q&amp;A</a></li>
+					<li id="about" class="vertical "><a class="col-12 col-m-3" href="#">About Us</a></li>
 				</ul>
 			</nav>
 			<div id="div1" class="col-6">
@@ -44,6 +43,7 @@
 						<a href="#" class="product">
 							<img src="./images/shirt1.gif"/>
 							<div>
+								<p class="hide">0</p>
 								<p>Balloon</p>
 								<p>Price:$25</p>
 							</div>
@@ -58,6 +58,7 @@
 						<a href="#" class="product">
 							<img src="./images/shirt2.gif"/>
 							<div>
+								<p class="hide">1</p>
 								<p>Green Fever</p>
 								<p>Price:$50</p>
 							</div>
@@ -71,6 +72,7 @@
 						<a href="#" class="product">
 							<img src="./images/shirt3.gif"/>
 							<div>
+								<p class="hide">2</p>
 								<p>Elephant</p>
 								<p>Price:$75</p>
 							</div>
@@ -84,6 +86,7 @@
 						<a href="#" class="product">
 							<img src="./images/shirt4.gif"/>
 							<div>
+								<p class="hide">3</p>
 								<p>Nerdie</p>
 								<p>Price:$45</p>
 							</div>
@@ -97,6 +100,7 @@
 						<a href="#" class="product">
 							<img src="./images/shirt5.gif"/>
 							<div>
+								<p class="hide">4</p>
 								<p>Blue Fever</p>
 								<p>Price:$50</p>
 							</div>
@@ -110,6 +114,7 @@
 						<a href="#" class="product">
 							<img src="./images/shirt6.gif"/>
 							<div>
+								<p class="hide">5</p>
 								<p>Fuzzy</p>
 								<p>Price:$100</p>
 							</div>
@@ -138,7 +143,7 @@
 				<p class="total">Total: $0</p>
 				<button id="deleteCart" class="btn btn-primary btn-lg" type="button">Clear cart</button>
 				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal_1">
 				  Buy now
 				</button>
 			</div>
@@ -155,7 +160,7 @@
 			</footer>
 		</div>
 
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal fade" id="myModal_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -163,11 +168,30 @@
 						<h4 class="modal-title" id="myModalLabel">Finish Purchase</h4>
 					</div>
 					<div class="modal-body">
-						Jakob is a horse!
+						Thank you :)
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 						<button type="button" class="btn btn-primary">Buy</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--modal for the products-->
+
+		<div class="modal fade" id="myModal_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 id="nameOfProduct" class="modal-title" id="myModalLabel">Name of a product!</h4>
+					</div>
+					<div id="description" class="modal-body">
+						Description
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
 					</div>
 				</div>
 			</div>
