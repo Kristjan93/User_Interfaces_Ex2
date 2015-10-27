@@ -41,8 +41,8 @@
 
 				<label for="telephone-2">Telephone</label>
 				<input id="telephone-2" name="telephone" type="text">
-
 			</fieldset>
+
 			<h3>Profile</h3>
 			<fieldset>
 				<legend>Profile Information</legend>
@@ -56,19 +56,16 @@
 				<label for="confirm-2">Confirm</label>
 				<input id="confirm-2" name="confirm" type="text">
 
-				<label for="profImg-2">Profile image</label>
-				<input id="profImg-2" name="profImg" type="text">
-
-				<!-- <label for="age-2">Age (The warning step will show up if age is less than 18) *</label>
-				<input id="age-2" name="age" type="text" class="required number"> -->
+				<div>
+					<p>At any moment you can change your profile picture</p>
+					<label for="profImg-2">Required, image files only: </label>
+					<input id="profImg-2" name="profImg" type="file">
+					<img id="disImg" src="#" alt="your image" />
+				</div>
 
 			</fieldset>
-			<h3>Warning</h3>
-			<fieldset>
-				<legend>You are to young</legend>
-				<p>Please go away ;-)</p>
-			</fieldset>
-			<h3>Finish</h3>
+
+			<h3>Shipping information</h3>
 			<fieldset>
 				<legend>Terms and Conditions</legend>
 				<input id="acceptTerms-2" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms-2">I agree with the Terms and Conditions.</label>

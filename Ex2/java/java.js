@@ -12,10 +12,6 @@ $(document).ready(function() {
 			if (currentIndex > newIndex) {
 				return true;
 			}
-			// Forbid next action on "Warning" step if the user is to young
-			if (newIndex === 3 && Number($("#age-2").val()) < 18) {
-				return false;
-			}
 			// Needed in some cases if the user went back (clean up)
 			if (currentIndex < newIndex) {
 				// To remove error styles
@@ -24,16 +20,6 @@ $(document).ready(function() {
 			}
 			form.validate().settings.ignore = ":disabled,:hidden";
 			return form.valid();
-		},
-		onStepChanged: function(event, currentIndex, priorIndex) {
-			// Used to skip the "Warning" step if the user is old enough.
-			if (currentIndex === 2 && Number($("#age-2").val()) >= 18) {
-				form.steps("next");
-			}
-			// Used to skip the "Warning" step if the user is old enough and wants to the previous step.
-			if (currentIndex === 2 && priorIndex === 3) {
-				form.steps("previous");
-			}
 		},
 		onFinishing: function(event, currentIndex) {
 			form.validate().settings.ignore = ":disabled";
@@ -58,7 +44,7 @@ $(document).ready(function() {
 				required: {
 					depends: function() {
 						return $('#userName-2').val() != '';
-					} 
+					}
 				}
 			},
 			// TODO fix how pwcheck messes everything up 
@@ -73,28 +59,33 @@ $(document).ready(function() {
 			},
 			confirm: {
 				equalTo: "#password-2"
-			},
+			}
 		},
 		messages: {
 			password: {
-				pwcheck: ""
+				pwcheck: "Must contain letters [a-z] and digits[0-9]"
 			}
 		}
 	});
 	// Specific password requirements
 	$.validator.addMethod("pwcheck", function(value) {
 		return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
-		&& /[a-z]/.test(value) // has a lowercase letter
-		&& /\d/.test(value) // has a digit
+			&& /[a-z]/.test(value) // has a lowercase letter
+			&& /\d/.test(value) // has a digit
+	});
+
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				$('#disImg').attr('src', e.target.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+	$("#profImg-2").change(function() {
+		readURL(this);
 	});
 
 });
-
-
-				// required: function() {
-				// 	console.log($("#userName-2").val());
-				// 	return $("#userName-2").val() == "";
-				// }
-
-
-// "Must contain letters [a-z] and digits[0-9]"
