@@ -39,8 +39,18 @@ $(document).ready(function() {
 			element.before(error);
 		},
 		rules: {
+			name: {
+				required: true
+			},
+			surname: {
+				required: true
+			},
 			email: {
+				required: true,
 				email: true
+			},
+			shipAddr: {
+				required: true
 			},
 			telephone: {
 				digits: true,
