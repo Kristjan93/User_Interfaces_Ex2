@@ -1,6 +1,8 @@
 #myparallaxslider{ /* CSS for specific carousel container called #myparallaxslider. */
 width:80%;
 height:550px;
+margin-left: auto;
+margin-right: auto;
 }
 
 /* ######### Shared CSS for various parts of slider (in the event of multiple sliders) ######### */
