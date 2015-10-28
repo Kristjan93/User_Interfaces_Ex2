@@ -1,21 +1,12 @@
-/* It is possible to use Id, child and more selectors 
- * and it is important to know them and i do know them
- * i do not use much here for they are redundant and useless (Hilmar ekki ?)
- */
-
 body, html {
 	margin:0;
 	padding:0;
 	color:#000;
 }
 
-/* Declare font-size so 1em is 10px,
- * possible to use JavaScript to re-render page and make it responsive using this method
- */
 body {
 	font-size: 10px;
 	font-family: "Courier New", Courier, monospace;
-
 }
 
 * {

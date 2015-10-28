@@ -15,6 +15,22 @@ header {
 	margin-bottom: 0.5em;
 }
 
+#menuBar{
+	list-style-type: none;
+	margin: 2em;
+	padding: 0;
+}
+
+li {
+	display: inline;
+}
+
+#menuBar a {
+	font-size: 2em;
+	margin-left: 1em;
+	color: maroon;
+}
+
 .logo {
 	height: 10em;
 	max-width: 100%;
@@ -51,7 +67,6 @@ header {
 	margin-left: 1%;
 }
 
-
 .totalAmo h2 {
 	color: #00635D;
 	margin: 0em;
@@ -77,9 +92,4 @@ header {
 
 legend {
 	margin: 0em;
-}
-
-
-.uploadPhoto {
-	
 }

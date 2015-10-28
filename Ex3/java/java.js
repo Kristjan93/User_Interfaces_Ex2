@@ -1,41 +1,25 @@
-// Pseudo code
-
 var firstparallaxslider = new parallaxSlider({
-	    wrapperid: 'myparallaxslider', //ID of DIV on page to house slider
-	    displaymode: {
-	        // Auto or manual
-	        type: 'manual',
-	        // Pause between slides,
-	        pause: 3000,
-	        // Number of cycles before the slider stops in automatic mode
-	        cycles: 0,
-	        stoponclick: true,
-	        pauseonmouseover: true
-	    },
-	    //transition duration (milliseconds)
-	    slideduration: 1000,
-	    // delay in milliseconds between the revealing of each description layer inside a slide
-	    delaybtwdesc: 500,
-	    // path to nav images
-	    navbuttons: ['./images/left.png', './images/right.png', 'up.png', 'down.png'],
-	    // CSS class that gets added to currently shown DIV slide
-	    activeslideclass: 'selectedslide',
-	    //Valid values: "h" or "v"
-	    orientation: 'h',
-	    //remember last viewed slide and recall within same session?
-	    persist: true
+		wrapperid: 'myparallaxslider', //ID of DIV on page to house slider
+		displaymode: {
+			// Auto or manual
+			type: 'auto',
+			// Pause between slides,
+			pause: 3000,
+			// Number of cycles before the slider stops in automatic mode
+			cycles: 0,
+			stoponclick: true,
+			pauseonmouseover: true
+		},
+		//transition duration (milliseconds)
+		slideduration: 1000,
+		// delay in milliseconds between the revealing of each description layer inside a slide
+		delaybtwdesc: 500,
+	// path to nav images
+		navbuttons: ['./images/left.png', './images/right.png', 'up.png', 'down.png'],
+		// CSS class that gets added to currently shown DIV slide
+		activeslideclass: 'selectedslide',
+		//Valid values: "h" or "v"
+		orientation: 'h',
+		//remember last viewed slide and recall within same session?
+		persist: true
 	})
-
-jQuery(document).ready(function($) {
-	//When Q and A button is pressed.
-    $("#qanda").click(function(event){
-    	$("#myparallaxslider").html("Dont ask us anything");
-    });
-
-    //When About us is pressed.
-    $("#about").click(function(event){
-    	$("#myparallaxslider").html("Two quys from Iceland who decided to sell" +
-    	" t-shirt on the internet. We are related because everyone from Iceland"
-    	+" is. We dont like polar bears because thay some times eat our family.");
-    });
-});

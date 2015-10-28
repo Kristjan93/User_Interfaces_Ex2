@@ -23,7 +23,14 @@
 				src="./images/Anonymous_logo.png"
 				alt="android phone logo">
 			</div>
-			<div class="titleText col-10 col-m-10"><h1>The IceShop<small>hottest shop online</small></h1></div>
+			<div class="titleText"><h1>The IceShop <small>hottest shop online</small></h1></div>
+			<nav class="nav nav-pills nav-stacked col-md-5">
+				<ul id="menuBar">
+					<li id="home"><a href="./main.html">Home</a></li>
+					<li id="qanda"><a href="#!">Q&amp;A</a></li>
+					<li id="about"><a href="#!">About us</li>
+				</ul>
+			</nav>
 		</header>
 		<form id="myForm" action="#">
 			<h3>Shipping address</h3>
@@ -87,7 +94,7 @@
 					</div>
 				</div>
 				<div class="col-md-12 form-group">
-					<label for="profImg-2" class="col-md-2 control-label">Required, image files only: </label>
+					Img
 					<div class="col-md-5">
 						<input id="profImg-2" name="profImg" type="file" class="form-control">
 					</div>
@@ -123,7 +130,7 @@
 						<label for="expiryMonth" class="col-md-2 control-label">Expiration date</label>
 						<div class="col-sm-9">
 							<div class="row">
-								<div class="col-md-2">
+								<div class="col-md-4">
 									<select id="expiryMonth-2" name="expiryMonth" class="form-control">
 										<option value="month">Month</option>
 										<option value="01">Jan (01)</option>
@@ -140,7 +147,7 @@
 										<option value="12">Dec (12)</option>
 									</select>
 								</div>
-								<div class="col-md-2">
+								<div class="col-md-4">
 									<select id="expiryYear-2" name="expiryYear" class="form-control">
 										<option value="year">Year</option>
 										<option value="13">2013</option>
@@ -165,26 +172,24 @@
 							<input id="cvv-2" name="cvv" type="text" class="form-control" placeholder="Security Code">
 						</div>
 					</div>
-
 					<div class="col-md-12 form-group">
 						<label for="holderName-2" class="col-md-2 control-label">Name on Card<span class="manSpot">*</span></label>
 						<div class="col-md-5">
 							<input id="holderName-2" name="holderName" type="text" class="form-control" placeholder="Card Holder's Name">
 						</div>
 					</div>
-
-				</fieldset>
-			</form>
-			<footer class="footer col-md-12">
-				<p class="col-md-3">@ThisISTheEnd</p>
-				<div class="col-md-7 empty"></div>
-				<p class="col-md-2">
-					<a href="#"><i class="facebook square icon"></i></a>
-					<a href="#"><i class="tumblr square icon"></i></a>
-					<a href="#"><i class="google plus square icon"></i></a>
-				</p>
-			</footer>
-		</body>
-		<script>
-		</script>
-	</html>
+					<div class="col-md-12 form-group">
+						<label for="acceptTerms-2" class="col-md-2 control-label">I agree with the Terms and Conditions. <span class="manSpot">*</span></label>
+						<div class="col-md-5">
+							<input id="acceptTerms-2" name="acceptTerms" type="checkbox" class="form-control">
+						</div>
+					</fieldset>
+				</form>
+				<footer class="footer col-md-12">
+					<p class="col-md-3">@ThisISTheEnd</p>
+					<div class="col-md-7 empty"></div>
+				</footer>
+			</body>
+			<script>
+			</script>
+		</html>

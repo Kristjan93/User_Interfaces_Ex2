@@ -1,8 +1,8 @@
-// Pseudo code
 
 $(document).ready(function() {
 
 	var product = Base.extend({
+		// Constructor
 		constructor: function(name, price, description) {
 			this.name = name;
 			this.price = price;
@@ -16,8 +16,10 @@ $(document).ready(function() {
 	});
 
 	var cart = {
+
 		products: [],
 		totalPrice: 0,
+
 		drawProducts: function() {
 
 			// Drop the whole table
@@ -36,10 +38,12 @@ $(document).ready(function() {
 		},
 		updateTotalPrice: function(price){
 			cart.totalPrice += price;
+			// Update total element
 			$('div.cart .total').html('Total: $'+ cart.totalPrice);
 		},
 		justUpdate: function(id, quant) {
 			if(cart.products[id] !== undefined ) {
+				// Update product info that belong to the carts array
 				cart.products[id].total += (cart.products[id].price * quant);
 				cart.updateTotalPrice(cart.products[id].price * quant);
 				cart.products[id].quant += quant;
@@ -56,13 +60,15 @@ $(document).ready(function() {
 			if(cart.justUpdate(id, quant) === true) {
 				return;
 			}
-			// TODO ERROR
+			alert("Error loading this product to your cart");
 		},
+		// Empty the cart info
 		deleteProducts: function(){
 			cart.products = [];
 			cart.totalPrice = 0;
 			cart.updateTotalPrice(0);
 			cart.drawProducts();
+			// Fill the array once again
 			inisiateDatabase();
 		}
 	}
@@ -77,13 +83,13 @@ $(document).ready(function() {
 		cart.products.push( new product("Fuzzy", 100, "This one is the coolest one") );
 	}; inisiateDatabase();
 
+	// Get the id of the product and the quantity requested
 	$('.addProduct').on('submit', function () {
 		var id = $(this).find('button').val();
 		var quant = parseInt($(this).find('input[name="quantity"]').val());
 		cart.addProduct(id, quant);
 		return false;
 	});
-
 
 	$( "#deleteCart").click(function(){
 		cart.deleteProducts();
@@ -94,29 +100,18 @@ $(document).ready(function() {
 		var id = $(this).find("p:first").text();
 		$("#nameOfProduct").html(cart.products[id].name);
 		$("#description").html(cart.products[id].description);
-        event.preventDefault();
-        $("#myModal_2").modal("show");
-    });
+		event.preventDefault();
+		$("#myModal_2").modal("show");
+	});
 
 	//When Q and A button is pressed.
-    $("#qanda").click(function(event){
-    	$("#div1").html("Dont ask us anything");
-    });
+	$("#qanda").click(function(event){
+		$("#div1").html("Dont ask us anything");
+	});
 
-    //When About us is pressed.
-    $("#about").click(function(event){
-    	$("#div1").html("Two quys from Iceland who decided to sell t-shirt on the internet. We are related because everyone from Iceland is. We dont like polar bears because thay some times eat our family.");
-    });
-
-	//Cant make it work because it cant load a local file!!!
-
-	//Change the content on the page when clicking on Home on the navigation bar
-	// $("li").click(function(){
-	// 	console.log("is it working?");
- //        $("#div1").load('homePage.html');
- //    });
-
-
-
+	//When About us is pressed.
+	$("#about").click(function(event){
+		$("#div1").html("Two quys from Iceland who decided to sell t-shirt on the internet.  We are related because everyone from Iceland is.  We dont like polar bears because thay some times eat our family.");
+	});
 });
 
