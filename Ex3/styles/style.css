@@ -33,3 +33,16 @@ header {
 .footer i {
 	font-size: 1.5em;
 }
+
+#showerQuote {
+	position:absolute;
+	bottom:15px;
+	left:30px;
+	width:250px;
+	background:black;
+	font:normal 105% Germand;
+	padding:10px;
+	font-style:italic;
+	border-radius:10px;
+	line-height:1.4em;
+}

@@ -5,7 +5,7 @@ var firstparallaxslider = new parallaxSlider({
     wrapperid: 'myparallaxslider', //ID of DIV on page to house slider
     displaymode: {
         // Auto or manual
-        type: 'auto',
+        type: 'manual',
         // Pause between slides,
         pause: 3000,
         // Number of cycles before the slider stops in automatic mode
