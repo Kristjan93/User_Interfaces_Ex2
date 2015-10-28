@@ -55,6 +55,37 @@ header {
 	font-style:italic; border-radius: 1em;
 }
 
+#puffinCute {
+	position:absolute;
+	top:60%;
+	background: #769028;
+	font:normal 100% Germand;
+	padding: 1em;
+	font-style:italic; border-radius: 1em;
+	width: 100%;
+}
+
+#weEatThem {
+	position:absolute;
+	top:70%;
+	background: #246024;
+	font:normal 100% Germand;
+	padding: 1em;
+	font-style:italic; border-radius: 1em;
+	width: 100%;
+}
+
+#puffinFood {
+	position:absolute;
+	left: 1em;
+	width: 11em;
+	height: 7em;
+	top: 80%;
+	background: url(../images/puffinFood.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
 
 #iceFlag {
 	position:absolute;
@@ -92,7 +123,8 @@ header {
 
 #saganQuote {
 	position:absolute; 
-	top:1em
+	top:37em;
+	right: 1em;
 }
 
 
