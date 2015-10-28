@@ -48,7 +48,7 @@ header {
 
 #hourseAlc {
 	position:absolute;
-	top:5%;
+	top:15%;
 	background:#754B08;
 	font:normal 100% Germand;
 	padding: 1em;
@@ -93,4 +93,16 @@ header {
 #saganQuote {
 	position:absolute; 
 	top:1em
+}
+
+
+.myTitle {
+	position:absolute;
+	width: 30%;
+	right: 35%;
+	top: 1em;
+}
+
+.myTitle strong {
+	font-size: 2.3em;
 }
