@@ -46,6 +46,15 @@ header {
 	line-height:1.4em;
 }
 
+#hourseAlc {
+	position:absolute;
+	top:5%;
+	background:#754B08;
+	font:normal 100% Germand;
+	padding: 1em;
+	font-style:italic; border-radius: 1em;
+}
+
 
 #iceFlag {
 	position:absolute;
@@ -56,5 +65,17 @@ header {
 	background: url(../images/iceFlag.jpeg);
 	background-repeat:no-repeat;
 	background-size: cover;
+}
 
+#hilmar {
+	position:absolute;
+	right: 27em;
+	width: 11em;
+	height: 7em;
+	top: 30em;
+	background: url(../images/hilmar.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
+	border: 0.2em solid white;
+	border-radius: 20%;
 }
