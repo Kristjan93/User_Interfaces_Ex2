@@ -33,3 +33,28 @@ header {
 .footer i {
 	font-size: 1.5em;
 }
+
+#showerQuote {
+	position:absolute;
+	bottom: 1em;
+	right: 1em;
+	width: 25em;
+	font:normal 105% Germand;
+	padding:1em;
+	font-style:italic;
+	border-radius:1em;
+	line-height:1.4em;
+}
+
+
+#iceFlag {
+	position:absolute;
+	right: 27em;
+	width: 11em;
+	height: 7em;
+	top: 30em;
+	background: url(../images/iceFlag.jpeg);
+	background-repeat:no-repeat;
+	background-size: cover;
+
+}
