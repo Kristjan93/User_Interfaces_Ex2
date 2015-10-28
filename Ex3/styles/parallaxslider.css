@@ -11,7 +11,9 @@ div.parallaxslider{ /* shared CSS for main carousel container */
 
 }
 
-div.parallaxslider img.navbutton{ /* CSS for the nav buttons */
+div.parallaxslider img.navbutton{
+	width: 3%;
+	height: 5%;
 }
 
 div.parallaxslider *{

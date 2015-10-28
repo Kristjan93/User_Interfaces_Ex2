@@ -18,7 +18,7 @@ var firstparallaxslider = new parallaxSlider({
     // delay in milliseconds between the revealing of each description layer inside a slide
     delaybtwdesc: 500,
     // path to nav images
-    navbuttons: ['left.png', 'right.png', 'up.png', 'down.png'],
+    navbuttons: ['./images/left.png', './images/right.png', 'up.png', 'down.png'],
     // CSS class that gets added to currently shown DIV slide
     activeslideclass: 'selectedslide',
     //Valid values: "h" or "v"
