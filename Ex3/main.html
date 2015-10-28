@@ -2,20 +2,25 @@
 <html>
 	<head>
 		<!-- Making css take into account the total width/height of any element -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width"> 
 		<meta charset="utf-8"/>
 		<title>ShoppingForYou</title>
+
+
+		<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"> </script>
+		<script src="bower_components/velocity/velocity.min.js" type="text/javascript"></script>
+		<script src="bower_components/jquery-touchswipe/jquery.touchSwipe.min.js" type="text/javascript"></script>
+		<!-- Slider -->
+		<script src="java/parallaxslider.js" type="text/javascript"></script>
+		
+		
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="java/java.js" type="text/javascript"></script>
 		
 		<link rel="stylesheet" type="text/css" href="./styles/style.css">
 		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="styles/parallaxslider.css">
-		<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
-		<!-- Slider -->
-		<script src="java/parallaxslider.js" type="text/javascript"></script>
-		<script src="bower_components/velocity/velocity.min.js" type="text/javascript"></script>
-		<script src="bower_components/jquery-touchswipe/jquery.touchSwipe.min.js" type="text/javascript"></script>
-		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="java/java.js" type="text/javascript"></script>
+
 	</head>
 	<body>
 		<header class="col-md-12">
@@ -34,13 +39,13 @@
 				<div class="slide">
 					<div class="bgoverlay" data-bgimage="./images/iceHouse.jpg"></div>
 
-					<!-- <div class="desc">A cairn is a man-made pile (or stack) of stones, used as trail markers in many parts of the world. -Wikipedia</div>
+					<div class="desc">A cairn is a man-made pile (or stack) of stones, used as trail markers in many parts of the world. -Wikipedia</div>
 
 					<div class="desc">
 						<div style="position:absolute; bottom:15px; left:30px; width:250px; background:black; font:normal 105% Germand; padding:10px; font-style:italic; border-radius:10px; line-height:1.4em;">
 							“Letting go is the lesson. Letting go is always the lesson. Have you ever noticed how much of our agony is all tied up with craving and loss?” <br />- Susan Gordon Lydon
 						</div>
-					</div> -->
+					</div>
 
 				</div>
 				<div class="slide">
@@ -75,7 +80,7 @@
 					</div> -->
 				</div>
 			</div>
-			<a href="javascript:firstparallaxslider.navigate('back')">Back</a> | <a href="javascript:firstparallaxslider.navigate('forth')">Forth</a>
+			<!-- <a href="javascript:firstparallaxslider.navigate('back')">Back</a> | <a href="javascript:firstparallaxslider.navigate('forth')">Forth</a> -->
 		</main>
 
 		<footer class="footer col-md-12">
@@ -88,6 +93,4 @@
 			</p>
 		</footer>
 	</body>
-	<script>
-	</script>
 </html>

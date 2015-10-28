@@ -8,7 +8,7 @@ margin-right: auto;
 /* ######### Shared CSS for various parts of slider (in the event of multiple sliders) ######### */
 
 div.parallaxslider{ /* shared CSS for main carousel container */
-background: black url(ajaxload.gif) center center no-repeat; /* loading gif while caoursel is loading */
+
 }
 
 div.parallaxslider img.navbutton{ /* CSS for the nav buttons */
