@@ -1,0 +1,85 @@
+body, html {
+	margin:0;
+	padding:0;
+	color:#000;
+}
+
+body {
+	font-size: 10px;
+	font-family: "Courier New", Courier, monospace;
+}
+
+header {
+	background-color: #99CCFF;
+	height: 10em;
+	margin-bottom: 0.5em;
+}
+
+.logo {
+	height: 10em;
+	max-width: 100%;
+}
+
+.mandatory {
+	position: absolute;
+	right:0;
+	top:0;
+	font-size: 1.5em;
+	color: red;
+}
+
+.manSpot {
+	color: red;
+}
+
+#disImg {
+	max-width: 100%;
+	height: 10em;
+	width: 10em;
+}
+
+.form-control {
+	margin-bottom: 0em;
+}
+
+.newUserInfo {
+	font-size: 1.4em;
+	color: #446DF6;
+}
+
+.newUserInfo strong {
+	margin-left: 1%;
+}
+
+
+.totalAmo h2 {
+	color: #00635D;
+	margin: 0em;
+}
+
+.footer {
+	margin-top: 2em;
+	height: 3em;
+	border-top: 0.2em solid #99CCFF;
+}
+
+.footer p {
+	padding-top: 0.5em;
+}
+
+.footer i {
+	font-size: 1.5em;
+}
+
+.empty {
+	height: 0.1em;
+}
+
+legend {
+	margin: 0em;
+}
+
+
+.uploadPhoto {
+	
+}
