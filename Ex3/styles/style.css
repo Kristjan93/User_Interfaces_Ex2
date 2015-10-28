@@ -58,3 +58,18 @@ header {
 	background-size: cover;
 
 }
+
+#appelsinLag {
+	position:absolute;
+	width:150px;
+	bottom:10px;
+	line-height:1.5em;
+	background:#E29F16;
+	padding:10px;
+	border-radius:7px
+}
+
+#saganQuote {
+	position:absolute; 
+	top:1em
+}
